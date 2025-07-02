@@ -6,24 +6,17 @@ const roomSchema = new Schema({
     ref: "PG",
     required: true
   },
-ownerid :{
-type : mongoose.Schema.Types.ObjectId,
-ref : "Owner",
-required : true
-},
-  roomType: {
-    type: String,
-    enum: ["1-seater", "2-seater", "3-seater", "4-seater"],
+  ownerid: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Owner",
     required: true
   },
-
   rentPerPerson: {
     type: Number,
     required: true
   },
-
   capacity: {
-    type: Number, 
+    type: Number,
     required: true
   },
 
@@ -32,33 +25,33 @@ required : true
     required: true
   },
 
-  roomPhotos: [String], 
+  roomPhotos: [String],
 
-  facility: [String], 
+  facility: [String], // ac or non ac, veg or non-veg, seperate or attachedd bathroom, geyser or not , indian or western toilet (with jet spray) , shower or balti , seperate smoking space
 
-  bookings: [{
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "Booking"
-  }],
-
-isbook :{
-type : Boolean,
-default : false
-},
-
-comments: [{
-  student: {
+  booking_person_detail: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: "Student"
+  }],
+
+  isbook: {
+    type: Boolean,
+    default: false
   },
-  text: String,
-  createdAt: {
-    type: Date,
-    default: Date.now
-  }
-}]
-,
-reviews: [{
+
+  comments: [{
+    student: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Student"
+    },
+    text: String,
+    createdAt: {
+      type: Date,
+      default: Date.now
+    }
+  }]
+  ,
+  reviews: [{
     student: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Student"
@@ -80,19 +73,14 @@ reviews: [{
     ref: "Student"
   }]
   ,
-  floor :{
-    type : String
+  floor: {
+    type: String
   },
 
-  videoTourLink :{
-    type : String
+  videoTourLink: {
+    type: String
   },
 
-  
-  hasAttachedWashroom :{
-    type : Boolean,
-    default : false
-  }
 }, { timestamps: true });
 
 export const Room = mongoose.model("Room", roomSchema);

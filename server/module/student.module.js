@@ -35,6 +35,11 @@ const studentSchema = new Schema({
     ref: "Student"
   }],
 
+  matchedWith_withoutid: [{
+    type: String,
+    ref: "Student"
+  }],
+
   location: {
     type: {
       type: String,
@@ -42,7 +47,7 @@ const studentSchema = new Schema({
       default: "Point"
     },
     coordinates: {
-      type: [Number] 
+      type: [Number]
     }
   },
 
@@ -51,16 +56,16 @@ const studentSchema = new Schema({
     ref: "Booking"
   }],
 
-  isVerified :{
-    type : Boolean,
-    default : false
+  isVerified: {
+    type: Boolean,
+    default: false
   },
-  verifactioncode : {
-    type :String
-}
+  verifactioncode: {
+    type: String
+  }
 
 
-},{
+}, {
   timestamps: true
 });
 
