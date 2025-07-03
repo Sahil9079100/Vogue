@@ -31,14 +31,10 @@ const studentSchema = new Schema({
   },
 
   matchedWith: [{
-    type: mongoose.Schema.Types.ObjectId,
+    type: mongoose.Schema.Types.ObjectId ,
     ref: "Student"
   }],
 
-  matchedWith_withoutid: [{
-    type: String,
-    ref: "Student"
-  }],
 
   location: {
     type: {
@@ -46,10 +42,14 @@ const studentSchema = new Schema({
       enum: ['Point'],
       default: "Point"
     },
+
+
     coordinates: {
       type: [Number]
     }
   },
+
+  
 
   bookings: [{
     type: mongoose.Schema.Types.ObjectId,

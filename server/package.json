@@ -18,8 +18,12 @@
         "googleapis": "^150.0.1",
         "jsonwebtoken": "^9.0.2",
         "mongodb": "^6.15.0",
+<<<<<<< HEAD
+        "mongoose": "^8.16.1",
+=======
         "mongoose": "^8.13.2",
         "nodemailer": "^7.0.4",
+>>>>>>> acb53c96a17fd449dc758f4e0df8fd885826a41a
         "socket.io": "^4.8.1"
     }
 }
