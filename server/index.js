@@ -1,11 +1,11 @@
 import express from "express";
 import cors from "cors";
-// import dbconnect from "./db/databaseConnect.js";
+import dbconnect from "./db/databaseConnect.js";
 import cookieParser from "cookie-parser";
 import { Server } from 'socket.io';
 import { createServer } from 'http';
 // import router from "./route.js";
-// import adminRoute from "./routes/admin.route.js";
+import ownerrouter from "./route/owner.route.js";
 // import socket from "./socket.js";
 
 import path from "path";
@@ -43,7 +43,7 @@ app.use(cors({
 
 
 
-// app.use("/api", router)
+app.use("/api", ownerrouter)
 // app.use("/api/admin", adminRoute)
 
 // app.use("/api/wardern", wardernRoutes)

@@ -7,28 +7,25 @@ const roommateFormSchema = new Schema({
     required: true
   },
 
-roomid : {
-type : mongoose.Schema.Types.ObjectId,
-ref : "Room",
-required : true
-}
-,
+  roomid: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Room",
+    required: true
+  }
+  ,
   preferredRoomType: {
     type: String,
     enum: ["1-seater", "2-seater", "3-seater", "4-seater"]
   },
 
-
-  
-
-  locationPreference: String, 
+  locationPreference: {type: String},
 
   budgetRange: {
     min: Number,
     max: Number
   },
 
-  habits: [String], 
+  habits: [String],
 
   genderPreference: {
     type: String,

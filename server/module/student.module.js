@@ -36,7 +36,6 @@ const studentSchema = new Schema({
   }],
 
 
-
   location: {
     type: {
       type: String,
@@ -46,7 +45,7 @@ const studentSchema = new Schema({
 
 
     coordinates: {
-      type: [Number] 
+      type: [Number]
     }
   },
 
@@ -57,16 +56,16 @@ const studentSchema = new Schema({
     ref: "Booking"
   }],
 
-  isVerified :{
-    type : Boolean,
-    default : false
+  isVerified: {
+    type: Boolean,
+    default: false
   },
-  verifactioncode : {
-    type :String
-}
+  verifactioncode: {
+    type: String
+  }
 
 
-},{
+}, {
   timestamps: true
 });
 

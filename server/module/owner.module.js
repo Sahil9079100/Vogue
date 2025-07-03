@@ -5,29 +5,24 @@ const ownerSchema = new Schema({
         type: String,
         required: true
     },
-
     email: {
         type: String,
         required: true,
         unique: true
     },
-
     phone: {
         type: String,
         required: true,
         unique: true
     },
-
     password: {
         type: String,
         required: true
     },
-
     isVerified: {
         type: Boolean,
         default: false
     },
-
     ownedPGs: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: "PG"
@@ -52,6 +47,14 @@ const ownerSchema = new Schema({
 
 export const Owner = mongoose.model("Owner", ownerSchema);
 
-
+/*
+name
+email
+phone
+password
+isverified
+ownerPgs
+location
+verification code */
 
 
